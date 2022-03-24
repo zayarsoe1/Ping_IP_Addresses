@@ -18,7 +18,7 @@ These two scripts are designed for /24 subnet mask for now.
 
 ### Installing
 
-* Download stock.py and stock_list.txt from https://github.com/zayarsoe1/compounding_calculation
+* Download stock.py and stock_list.txt from https://github.com/zayarsoe1/Ping_IP_Addresses/
 
 
 ### Executing program
