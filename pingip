@@ -1,0 +1,30 @@
+#! /bin/bash
+
+
+function pingip {
+
+        read -p "Start IP address:" startip
+	first3oct=$(echo $startip | sed 's/\.[0-9]*$//')
+	startdigit=$(echo ${startip##*.})
+
+        read -p "End IP address:" endip
+	enddigit=$(echo ${endip##*.})
+
+        while [ $startdigit -le $enddigit ]
+
+        do
+
+                if ping -c1 -w3 $first3oct'.'$startdigit >/dev/null 2>&1
+                then
+                        echo $first3oct'.'$startdigit "is UP" >&2
+                else
+                        echo $first3oct'.'$startdigit "is NOT pingable" >&2
+                fi
+
+                startdigit=$[$startdigit+1]
+
+        done
+}
+
+
+pingip
